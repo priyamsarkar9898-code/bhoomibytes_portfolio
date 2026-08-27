@@ -217,8 +217,10 @@ export default function GoogleAnalytics() {
 ### ❌ DON'T: Use inline scripts
 
 ```tsx
+{% raw %}
 // WRONG
 <script dangerouslySetInnerHTML={{__html: '...'}} />
+{% endraw %}
 ```
 
 ### ❌ DON'T: Skip consent checks
