@@ -9,6 +9,7 @@ The Dashboard layout provides a complete application shell with sidebar navigati
 
 ### Correct Implementation ✅
 ```tsx
+{% raw %}
 import Dashboard from '@/layouts/Dashboard';
 import { Home, Users, Settings, BarChart } from 'lucide-react';
 
@@ -42,6 +43,7 @@ export default function DashboardPage() {
     </Dashboard>
   );
 }
+{% endraw %}
 ```
 
 ### Incorrect Implementation ❌
@@ -62,6 +64,7 @@ export default function DashboardPage() {
 ### Sidebar Configuration
 
 ```typescript
+{% raw %}
 interface SidebarConfig {
   logo?: {
     text?: string;           // Logo text
@@ -85,11 +88,13 @@ interface SidebarConfig {
   footer?: React.ReactNode;  // Sidebar footer content
   className?: string;        // Additional CSS classes
 }
+{% endraw %}
 ```
 
 ### Header Configuration
 
 ```typescript
+{% raw %}
 interface HeaderConfig {
   search?: {
     enabled?: boolean;       // Show search box (default: true)
@@ -108,6 +113,7 @@ interface HeaderConfig {
   actions?: React.ReactNode; // Additional header actions
   className?: string;       // Additional CSS classes
 }
+{% endraw %}
 ```
 
 ### Main Content Configuration
@@ -125,6 +131,7 @@ interface MainConfig {
 ### Full-Featured Dashboard
 
 ```tsx
+{% raw %}
 import Dashboard from '@/layouts/Dashboard';
 import { 
   Home, 
@@ -274,11 +281,13 @@ export default function AdminDashboard() {
     </Dashboard>
   );
 }
+{% endraw %}
 ```
 
 ### Minimal Dashboard
 
 ```tsx
+{% raw %}
 import Dashboard from '@/layouts/Dashboard';
 import { Home, Settings } from 'lucide-react';
 
@@ -307,11 +316,13 @@ export default function SimpleDashboard() {
     </Dashboard>
   );
 }
+{% endraw %}
 ```
 
 ### Analytics Dashboard
 
 ```tsx
+{% raw %}
 import Dashboard from '@/layouts/Dashboard';
 import { 
   BarChart3, 
@@ -372,6 +383,7 @@ export default function AnalyticsDashboard() {
     </Dashboard>
   );
 }
+{% endraw %}
 ```
 
 ## Mobile Responsiveness
@@ -386,6 +398,7 @@ The Dashboard layout is fully responsive:
 
 ### Active State Management
 ```tsx
+{% raw %}
 // Determine active state from the current route.
 // SSR-safe: use React Router's useLocation() inside the component.
 // NEVER use window.location.pathname — window is undefined during server render and crashes it.
@@ -408,15 +421,18 @@ navigation: {
     }
   ]
 }
+{% endraw %}
 ```
 
 ### Badge Usage
 ```tsx
+{% raw %}
 // Numeric badges for counts
 { title: 'Messages', href: '/messages', badge: 24 }
 
 // Text badges for status
 { title: 'Updates', href: '/updates', badge: 'New' }
+{% endraw %}
 ```
 
 ## Best Practices
@@ -432,6 +448,7 @@ navigation: {
 
 ### Dashboard with Tabs
 ```tsx
+{% raw %}
 <Dashboard config={dashboardConfig}>
   <div className="space-y-4">
     <Tabs defaultValue="overview">
@@ -452,10 +469,12 @@ navigation: {
     </Tabs>
   </div>
 </Dashboard>
+{% endraw %}
 ```
 
 ### Dashboard with Breadcrumbs
 ```tsx
+{% raw %}
 <Dashboard config={dashboardConfig}>
   <div className="space-y-4">
     {/* Breadcrumbs */}
@@ -486,6 +505,7 @@ navigation: {
     </div>
   </div>
 </Dashboard>
+{% endraw %}
 ```
 
 ## Anti-Patterns to Avoid
